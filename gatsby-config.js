@@ -4,7 +4,9 @@ https.globalAgent.options.rejectUnauthorized = false
 
 module.exports = {
   siteMetadata: {
-    title: "Invoice Maker",
+    title: "Gatsby Invoice Maker",
+    description: "A gatsby site for creating invoices and currency conversion",
+    author: "Mithun L",
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -20,6 +22,13 @@ module.exports = {
 				httpsAgent: new https.Agent({
 					rejectUnauthorized: false,
 				})
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
   ],
