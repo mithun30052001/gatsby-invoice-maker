@@ -5,6 +5,14 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/lab": "^7.0.0-beta.12",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.4.0",
+    "bootstrap": "^5.3.6",
+    "dayjs": "^1.11.13",
     "gatsby": "^5.14.1",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
@@ -13,8 +21,13 @@
     "gatsby-source-strapi": "^5.0.3",
     "gatsby-transformer-sharp": "^5.14.0",
     "https": "^1.0.0",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.10.1",
+    "react-simple-form": "^1.0.5"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
