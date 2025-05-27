@@ -34,7 +34,7 @@ const CurrencyConverterHome = () => {
           ))}
         </div>
         <div className="text-center mt-4">
-          <Link to="/">
+          <Link to="/currency-converter/usd-to-inr-rate">
             <Button variant="primary">Explore conversions</Button>
           </Link>
         </div>

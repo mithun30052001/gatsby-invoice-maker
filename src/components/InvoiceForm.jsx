@@ -9,10 +9,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import dayjs from "dayjs";
 import InvoicePreview from "./InvoicePreview";
 
-const InvoiceForm = ({ onGenerate }) => {
+const InvoiceForm = ({ onGenerate, defaultCurrency = "$" }) => {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const currencySymbol = queryParams.get("currency") || "$";
+  const currencySymbol = defaultCurrency;
   const [invoiceData, setInvoiceData] = useState({
     invoiceName: "",
     logo: null,

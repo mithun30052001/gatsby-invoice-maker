@@ -1,18 +1,16 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
-
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
 exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
-}
+  const { createPage } = actions;
+
+  const currencyPairs = [
+    "usd-to-inr-rate", "usd-to-krw-rate", "usd-to-jpy-rate", "usd-to-cad-rate",
+    "usd-to-eur-rate", "usd-to-gbp-rate", "usd-to-cny-rate", "usd-to-mxn-rate"
+  ];
+
+  currencyPairs.forEach(pair => {
+    createPage({
+      path: `/currency-converter/${pair}`,
+      component: require.resolve("./src/templates/CurrencyConverter.jsx"),
+      context: { pairRate: pair },
+    });
+  });
+};
