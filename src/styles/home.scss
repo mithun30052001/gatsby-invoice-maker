@@ -1,5 +1,5 @@
 .invoice-converter-background {
-  background-color: #F0F8FF;
+   background-color: #F0F8FF;
 }
 
 .invoice-converter-button-background {
@@ -8,12 +8,17 @@
 }
 
 .banner-section {
-  background-color: #88BDF2;
+  background-color: #88bdf2;
   padding: 80px 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+    padding: 60px 40px;
+  }
 }
 
 .banner-heading {
@@ -23,16 +28,29 @@
   line-height: 54px;
   text-align: left;
   margin-bottom: 16px;
+  margin-left: 10%;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 8px;
+  }
 }
 
 .banner-description {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  text-align: left;
-  justify-content: left;
   font-size: 20px;
   line-height: 54px;
+  text-align: left;
   margin-bottom: 16px;
+  margin-left: 10%;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
 }
 
 .banner-heading,
@@ -58,21 +76,9 @@
   background-color: #a4c7ef;
 }
 
-@media (max-width: 768px) {
-  .banner-section {
-    gap: 8px;
-    padding: 60px 40px;
-  }
-
-  .banner-heading {
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 8px;
-  }
-
-  .banner-description {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 8px;
-  }
+.text-h1 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 54px;
+  text-align: center;
 }

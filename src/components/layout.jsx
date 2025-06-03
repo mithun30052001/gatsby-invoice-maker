@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import "../styles/App.css";
+import "../styles/main.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = ({ children }) => (
