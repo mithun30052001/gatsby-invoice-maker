@@ -1,10 +1,35 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allStrapiTestOne {
+        nodes {
+          id
+          attributes {
+            title
+          }
+        }
+      }
+      allStrapiTestTwo {
+        nodes {
+          id
+          attributes {
+            title
+          }
+        }
+      }
+    }
+  `);
+  
+  const testOneTitles = data.allStrapiTestOne.nodes;
+  const testTwoTitles = data.allStrapiTestTwo.nodes;
+  console.log("Test One Titles:", testOneTitles);
+
   return (
     <>
       <section className="banner-section text-start">
@@ -15,7 +40,7 @@ const Home = () => {
           Create invoices with ease and you don’t have to pay single penny
         </p>
         <Link to="/invoice-generator" className="create-invoice-button-container">
-          <Button className="create-invoice-button">Create Invoice</Button>
+          <button className="create-invoice-button">Create Invoice</button>
         </Link>
       </section>
 
@@ -33,9 +58,11 @@ const Home = () => {
                 </Link>
               </div>
               <StaticImage
-                src="/invoice-generator-home.svg"
+                src="../images/invoice-generator-home.svg"
                 alt="Invoice Generator"
                 className="img-fluid mt-3 mt-md-0"
+                placeholder="BLURRED"
+						    loading="eager"
               />
             </div>
           </Col>
@@ -46,22 +73,38 @@ const Home = () => {
                 <h3 className="fw-bold">Currency converter for you</h3>
                 <p>Create invoices with ease and you don’t have to pay a single penny.</p>
                 <Link to="/currency-converter">
-                  <Button variant="primary" className="text-black invoice-converter-button-background">
+                  <Button variant="secondary" className="text-black invoice-converter-button-background">
                     Currency Converter
                   </Button>
                 </Link>
               </div>
               <StaticImage
-                src="/currency-converter.svg"
-                alt="Currency Converter"
+                src="../images/currency-converter.svg"
+                alt="Invoice Generator"
                 className="img-fluid mt-3 mt-md-0"
+                placeholder="BLURRED"
+						    loading="eager"
               />
             </div>
           </Col>
         </Row>
+
+        {/* <Row className="mt-5">
+          <Col>
+            <h2>Test One Titles</h2>
+            {testOneTitles.map(item => (
+              <div key={item.id}>{item?.attributes?.title}</div>
+            ))}
+
+            <h2 className="mt-4">Test Two Titles</h2>
+            {testTwoTitles.map(item => (
+              <div key={item.id}>{item?.attributes?.title}</div>
+            ))}
+          </Col>
+        </Row> */}
+
       </Container>
     </>
   );
 };
-
 export default Home;
