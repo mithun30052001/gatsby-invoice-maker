@@ -7,10 +7,10 @@ const Layout = ({ children }) => (
   <div className="app-container">
     <header className="app-header">
       <div className="header-content">
-        <span className="clearpayp">clearpayp✓</span>
+        <span className="text-p2-v3 font--primary text-fw-regular text-clr-primary">clearpayp✓</span>
         <nav>
-          <Link className="nav-links" to="/invoice-generator">Create Invoice</Link>
-          <Link className="nav-links" to="/currency-converter">Currency Converter</Link>
+          <Link className="text-p2 font--primary text-fw-medium text-clr-primary" to="/invoice-generator">Create Invoice</Link>
+          <Link className="text-p2 font--primary text-fw-medium text-clr-primary" to="/currency-converter">Currency Converter</Link>
         </nav>
       </div>
     </header>
@@ -18,8 +18,8 @@ const Layout = ({ children }) => (
     <main className="main-content">{children}</main>
 
     <footer className="app-footer">
-      <span className="clearpayp">clearpayp✓</span>
-      <span className="nav-links footer-right">©2025 clearpayp✓. All rights reserved.</span>
+      <span className="text-p2-v3 font--primary text-fw-regular">clearpayp✓</span>
+      <span className="text-p2 font--primary text-fw-medium text-clr-primary footer-right">©2025 clearpayp✓. All rights reserved.</span>
     </footer>
   </div>
 );

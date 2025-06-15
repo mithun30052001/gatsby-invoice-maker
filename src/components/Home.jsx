@@ -37,27 +37,27 @@ const Home = () => {
   return (
     <>
       <section className="banner-section text-start">
-        <h1 className="banner-heading mb-2">
+        <h1 className="text-h1 font--primary text-fw-medium banner-heading mb-2">
           Invoice generator for freelancers and small business
         </h1>
-        <p className="banner-description mb-3">
+        <p className="text-p2 font--primary text-fw-regular text-clr-primary banner-description mb-3">
           Create invoices with ease and you don’t have to pay single penny
         </p>
         <Link to="/invoice-generator" className="create-invoice-button-container">
-          <button className="create-invoice-button">Create Invoice</button>
+          <button className="text-p2 font--primary text-fw-regular text-clr-primary create-invoice-button">Create Invoice</button>
         </Link>
       </section>
 
       <Container fluid style={{ paddingTop: '6rem' }} className="pb-5 px-4">
-        <h1 className="text-h1 text-center mb-4">No work is free work. Get paid—gracefully!</h1>
+        <h1 className="text-h1 font--primary text-fw-medium text-align-center-sm-left mb-4">No work is free work. Get paid—gracefully!</h1>
         <Row className="justify-content-center align-items-center" style={{ marginTop: '6rem' }}>
           <Col xs={12} md={6} className="mb-5 mb-md-0">
             <div className="p-4 rounded shadow d-flex flex-column flex-md-row align-items-center invoice-converter-background text-black">
               <div className="flex-grow-1 text-center text-md-start">
-                <h3 className="fw-bold header-width">Free invoice generator for you</h3>
-                <p className="header-width">Create invoices with ease and you don’t have to pay a single penny.</p>
+                <h3 className="text-h3 font--primary text-fw-bold header-width">Free invoice generator for you</h3>
+                <p className="text-p2 font--primary text-fw-regular text-clr-secondary header-width">Create invoices with ease and you don’t have to pay a single penny.</p>
                 <Link to="/invoice-generator">
-                  <Button variant="secondary" className="text-black invoice-converter-button-background">
+                  <Button variant="secondary" className="text-p2 font--primary text-fw-regular text-clr-primary invoice-converter-button-background">
                     Create Invoice
                   </Button>
                 </Link>
@@ -75,10 +75,10 @@ const Home = () => {
           <Col xs={12} md={6}>
             <div className="p-4 rounded shadow d-flex flex-column flex-md-row align-items-center invoice-converter-background text-black">
               <div className="flex-grow-1 text-center text-md-start">
-                <h3 className="fw-bold header-width">Currency converter for you</h3>
-                <p className="header-width">Create invoices with ease and you don’t have to pay a single penny.</p>
+                <h3 className="text-h3 font--primary text-fw-bold header-width">Currency converter for you</h3>
+                <p className="text-p2 font--primary text-fw-regular text-clr-secondary header-width">Create invoices with ease and you don’t have to pay a single penny.</p>
                 <Link to="/currency-converter">
-                  <Button variant="secondary" className="text-black invoice-converter-button-background">
+                  <Button variant="secondary" className="text-p2 font--primary text-fw-regular text-clr-primary invoice-converter-button-background">
                     Currency Converter
                   </Button>
                 </Link>
@@ -112,7 +112,7 @@ const Home = () => {
 
       <section style={{ backgroundColor: '#F0F8FF', padding: '96px 0' }}>
         <Container fluid className="home-container-padding">
-          <h1 className="text-h1 text-center mb-5">What are the benefits?</h1>
+          <h1 className="text-h1 font--primary text-fw-medium text-align-center-sm-left mb-5">What are the benefits?</h1>
           <Row className="gy-4 gx-md-5 justify-content-center text-center">
             <Col xs={12} md={4}>
               <div className="benefit-box p-4 h-100 text-center text-md-start">
@@ -123,8 +123,8 @@ const Home = () => {
                   width={64}
                   height={64}
                 />
-                <h4 className="mt-3">Different formats</h4>
-                <p>No need to stick to one design. Choose format that works for your business. We have invoice templates for freelancers</p>
+                <h4 className="text-h4 font--primary text-fw-medium mt-3">Different formats</h4>
+                <p className="text-p2 font--primary text-fw-regular text-clr-secondary">No need to stick to one design. Choose format that works for your business. We have invoice templates for freelancers</p>
               </div>
             </Col>
             <Col xs={12} md={4}>
@@ -136,8 +136,8 @@ const Home = () => {
                   width={64}
                   height={64}
                 />
-                <h4 className="mt-3">Sprinkle your branding</h4>
-                <p>Join our elite league of delivery riders delivering happiness to customers and earn to achieve your dreams while at it.</p>
+                <h4 className="text-h4 font--primary text-fw-medium mt-3">Sprinkle your branding</h4>
+                <p className="text-p2 font--primary text-fw-regular text-clr-secondary">Join our elite league of delivery riders delivering happiness to customers and earn to achieve your dreams while at it.</p>
               </div>
             </Col>
             <Col xs={12} md={4}>
@@ -149,8 +149,8 @@ const Home = () => {
                   width={64}
                   height={64}
                 />
-                <h4 className="mt-3">Leave no paper trail</h4>
-                <p>If you are passionate about helping us achieve our goal to deliver meals seamlessly, come join the team.</p>
+                <h4 className="text-h4 font--primary text-fw-bold mt-3">Leave no paper trail</h4>
+                <p className="text-p2 font--primary text-fw-regular text-clr-secondary">If you are passionate about helping us achieve our goal to deliver meals seamlessly, come join the team.</p>
               </div>
             </Col>
           </Row>
@@ -159,7 +159,7 @@ const Home = () => {
 
       <section style={{ backgroundColor: '#F0F8FF', padding: '96px 0' }}>
         <Container fluid className="home-container-padding">
-          <h1 className="text-h1 text-center mb-5">
+          <h1 className="text-h1 font--primary text-fw-medium text-align-center-sm-left max-w-60 mb-5">
             We’ve got options. Invoice templates for all businesses.
           </h1>
           <Swiper
@@ -208,8 +208,8 @@ const Home = () => {
                     style={{ backgroundImage: `url(${img})` }}
                   >
                     <div className="template-overlay-content">
-                      <h4>{content.title}</h4>
-                      <p>{content.desc}</p>
+                      <h4 className="text-h4 font--primary text-fw-bold">{content.title}</h4>
+                      <p className="text-p2 font--primary text-fw-regular text-clr-secondary">{content.desc}</p>
                       <Link to="/" className="see-more-link">
                         See more →
                       </Link>
@@ -224,7 +224,7 @@ const Home = () => {
       
       <section style={{ backgroundColor: '#F0F8FF', padding: '96px 0' }}>
         <Container fluid className="home-container-padding">
-          <h1 className="text-h1 text-center mb-5">
+          <h1 className="text-h1 font--primary text-fw-medium text-align-center-sm-left max-w-60 mb-5">
             Work global. Invoice local. Auto-convert & create invoices in any currency.
           </h1>
           <Swiper
@@ -271,8 +271,8 @@ const Home = () => {
                     style={{ backgroundImage: `url(${img})` }}
                   >
                     <div className="template-overlay-content">
-                      <h4>{content.title}</h4>
-                      <p>{content.desc}</p>
+                      <h4 className="text-h4 font--primary text-fw-bold">{content.title}</h4>
+                      <p className="text-p2 font--primary text-fw-regular text-clr-secondary">{content.desc}</p>
                       <Link to={content.link} className="see-more-link">
                         See more →
                       </Link>
