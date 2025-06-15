@@ -14,37 +14,29 @@ const CurrencyConverterTemplate = ({ pageContext }) => {
   const [amount, setAmount] = useState(1);
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [toCurrencySymbol, setToCurrencySymbol] = useState("");
+  const [countries, setCountries] = useState([]);
 
-  const getCurrencySymbol = async (code) => {
-    try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
-      const data = await response.json();
-      for (const country of data) {
-        if (country.currencies && country.currencies[code]) {
-          return country.currencies[code].symbol || code;
-        }
-      }
-    } catch {
-      return code;
-    }
-  };
-
+  
   useEffect(() => {
-    getCurrencySymbol(toCurrency).then(setToCurrencySymbol);
-  }, [toCurrency]);
-
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch("https://restcountries.com/v3.1/all?fields=name,flags,currencies")
       .then(res => res.json())
       .then(data => {
+        if (!Array.isArray(data)) {
+          console.error("Expected array but got:", data);
+          return;
+        }
+
+        setCountries(data);
         const allCurrencies = {};
+
         data.forEach(c => {
           if (c.currencies) {
             Object.entries(c.currencies).forEach(([code, currency]) => {
               if (!allCurrencies[code]) {
                 allCurrencies[code] = {
                   value: code,
-                  label: `${c.flag} ${code} - ${currency.name}`,
+                  label: `${code} - ${currency.name}`,
+                  flag: c.flags?.png,
                 };
               }
             });
@@ -53,6 +45,16 @@ const CurrencyConverterTemplate = ({ pageContext }) => {
         setCurrencies(Object.values(allCurrencies));
       });
   }, []);
+
+  useEffect(() => {
+    const foundSymbol = countries.reduce((acc, country) => {
+      if (country.currencies && country.currencies[toCurrency]) {
+        return country.currencies[toCurrency].symbol || toCurrency;
+      }
+      return acc;
+    }, toCurrency);
+    setToCurrencySymbol(foundSymbol);
+  }, [toCurrency, countries]);
 
   useEffect(() => {
     fetch("https://v6.exchangerate-api.com/v6/635a26b74850accf8cb74fd7/latest/USD")
@@ -84,6 +86,12 @@ const CurrencyConverterTemplate = ({ pageContext }) => {
                 options={currencies}
                 value={currencies.find(c => c.value === fromCurrency)}
                 onChange={selected => handleCurrencyChange(selected, { value: toCurrency })}
+                formatOptionLabel={option => (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img src={option.flag} alt="" style={{ width: 20, marginRight: 8 }} />
+                    {option.label}
+                  </div>
+                )}
               />
             </Col>
             <Col>
@@ -92,6 +100,12 @@ const CurrencyConverterTemplate = ({ pageContext }) => {
                 options={currencies}
                 value={currencies.find(c => c.value === toCurrency)}
                 onChange={selected => handleCurrencyChange({ value: fromCurrency }, selected)}
+                formatOptionLabel={option => (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <img src={option.flag} alt="" style={{ width: 20, marginRight: 8 }} />
+                    {option.label}
+                  </div>
+                )}
               />
             </Col>
           </Row>

@@ -29,7 +29,8 @@
     "react-dom": "^18.2.0",
     "react-select": "^5.10.1",
     "react-simple-form": "^1.0.5",
-    "sass": "^1.89.1"
+    "sass": "^1.89.1",
+    "swiper": "^11.2.8"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
