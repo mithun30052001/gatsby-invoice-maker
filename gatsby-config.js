@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.STRAPI_API_URL || "https://invoice-strapi.onrender.com/",
+        apiURL: process.env.STRAPI_API_URL || "http://localhost:1337/",
         collectionTypes: ["test-one", "test-two"],
         accessToken: process.env.STRAPI_API_TOKEN,
         singleTypes: ["test-one", "test-two"],

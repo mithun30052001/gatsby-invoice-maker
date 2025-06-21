@@ -11,6 +11,7 @@ const Layout = ({ children }) => (
         <nav>
           <Link className="text-p2 font--primary text-fw-medium text-clr-primary" to="/invoice-generator">Create Invoice</Link>
           <Link className="text-p2 font--primary text-fw-medium text-clr-primary" to="/currency-converter">Currency Converter</Link>
+          <Link className="text-p2 font--primary text-fw-medium text-clr-primary" to="/about-us">About Us</Link>
         </nav>
       </div>
     </header>

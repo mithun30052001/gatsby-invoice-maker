@@ -9,30 +9,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const Home = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allStrapiTestOne {
-        nodes {
-          id
-          attributes {
-            title
-          }
-        }
-      }
-      allStrapiTestTwo {
-        nodes {
-          id
-          attributes {
-            title
-          }
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allStrapiTestOne {
+  //       nodes {
+  //         id
+  //         attributes {
+  //           title
+  //         }
+  //       }
+  //     }
+  //     allStrapiTestTwo {
+  //       nodes {
+  //         id
+  //         attributes {
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
   
-  const testOneTitles = data.allStrapiTestOne.nodes;
-  const testTwoTitles = data.allStrapiTestTwo.nodes;
-  console.log("Test One Titles:", testOneTitles);
+  // const testOneTitles = data.allStrapiTestOne.nodes;
+  // const testTwoTitles = data.allStrapiTestTwo.nodes;
+  // console.log("Test One Titles:", testOneTitles);
 
   return (
     <>
@@ -72,12 +72,12 @@ const Home = () => {
             </div>
           </Col>
 
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} className="mb-5 mb-md-0">
             <div className="p-4 rounded shadow d-flex flex-column flex-md-row align-items-center invoice-converter-background text-black">
               <div className="flex-grow-1 text-center text-md-start">
                 <h3 className="text-h3 font--primary text-fw-bold header-width">Currency converter for you</h3>
                 <p className="text-p2 font--primary text-fw-regular text-clr-secondary header-width">Create invoices with ease and you don’t have to pay a single penny.</p>
-                <Link to="/currency-converter">
+                <Link to="/invoice-generator">
                   <Button variant="secondary" className="text-p2 font--primary text-fw-regular text-clr-primary invoice-converter-button-background">
                     Currency Converter
                   </Button>
@@ -85,7 +85,7 @@ const Home = () => {
               </div>
               <StaticImage
                 src="../images/currency-converter.svg"
-                alt="Invoice Generator"
+                alt="Currency Converter"
                 className="img-fluid mt-3 mt-md-0"
                 placeholder="BLURRED"
 						    loading="eager"

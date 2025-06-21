@@ -1,4 +1,5 @@
 @import './home.scss';
+@import './about-us.scss';
 @import './utils.scss';
 
 #root {
@@ -55,6 +56,10 @@
   }
 }
 
+.app-header {
+  position: relative;
+}
+
 .app-header,
 .app-footer {
   background-color: #88bdf2;
@@ -74,11 +79,13 @@
   gap: 3rem;
   align-items: center;
   margin: 0 auto;
+  z-index: 10;
 }
 
 nav {
   display: flex;
   gap: 8px;
+  z-index: 20;
 
   a {
     text-decoration: none;

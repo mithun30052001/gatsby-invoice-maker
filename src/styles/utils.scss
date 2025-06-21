@@ -151,6 +151,16 @@
 		}
 	}
 
+	&-small-v2 {
+		font-size: 3rem;
+		line-height: 3.5rem;
+		letter-spacing: -4%;
+		@include breakpoint-down(small) {
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+	}
+
 	&-fw-light {
 		font-weight: 300;
 	}
@@ -372,4 +382,138 @@
   @include breakpoint-down(small) {
     max-width: 100%;
   }
+}
+
+.container {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+	@include breakpoint-down(small) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	&--large-l {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+		@include breakpoint-down(small) {
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--large-m {
+		padding-top: 8rem;
+		padding-bottom: 4rem;
+		@include breakpoint-down(small) {
+			padding-top: 5rem;
+			padding-bottom: 3rem;
+		}
+	}
+	&--medium-l {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		@include breakpoint-down(small) {
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--medium-m {
+		padding-top: 5rem;
+		padding-bottom: 8rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 4rem;
+		}
+	}
+	&--small-sub {
+		@include breakpoint-down(small) {
+			padding-top: 2.5rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--small-s {
+		padding-top: 4rem;
+		padding-bottom: 3rem;
+		@include breakpoint-down(small) {
+			padding-top: 2.5rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--small-m {
+		padding-top: 4rem;
+		padding-bottom: 5rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--small-l {
+		padding-top: 4rem;
+		padding-bottom: 8rem;
+		@include breakpoint-down(small) {
+			padding-top: 2.5rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--small-xl {
+		padding-top: 5rem;
+		padding-bottom: 8rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 4rem;
+		}
+	}
+	&--footer-top {
+		padding-top: 5rem;
+		padding-bottom: 4rem;
+		@include breakpoint-down(small) {
+			padding-top: 3rem;
+			padding-bottom: 3.5rem;
+		}
+	}
+	&--footer-bottom {
+		padding-bottom: 3rem;
+		@include breakpoint-down(small) {
+			padding-bottom: 5rem;
+		}
+	}
+
+	&--mob-1 {
+		padding-top: 5rem;
+		padding-bottom: 8rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+		}
+	}
+	&--v10 {
+		padding-top: 4rem;
+		padding-bottom: 5rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 5rem;
+		}
+	}
+
+	&--v12 {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		@include breakpoint-down(small) {
+			padding-top: 2rem;
+			padding-bottom: 4rem;
+		}
+	}
+}
+
+.container-v2 {
+	max-width: 67.5rem;
+	margin: 0 auto;
+	padding: 0 2rem;
+	@include breakpoint-down(small) {
+		padding: 0 1rem;
+	}
+}
+.container-v3 {
+	max-width: 69.5rem;
+	margin: 0 auto;
 }
